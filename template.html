@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+   	<title>MGSV Nuke watcher</title>
+    <link rel="stylesheet" href="/mgsv_nuke_watcher/assets/css/style.css?v=e87f0deb0254f7f9c7602bca2e1aad2458818a1e">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/mgsv_nuke_watcher/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="/mgsv_nuke_watcher/assets/vis.min.js"></script>
+    <link href="/mgsv_nuke_watcher/assets/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+      <header>
+        <h1>MGSV Nuke watcher</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+        <a href="https://github.com/unknown321/mgsv_nuke_watcher" class="button fork"><strong>View On GitHub</strong></a>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+
+	<h1>Nukes on Steam: -nukes_steam-</h1>
+	<h1>Nukes on PS3: -nukes_ps3-</h1>
+	<h1>Nukes on PS4: -nukes_ps4-</h1>
+	<p>Last update: -last_nuke_update- (UTC)</p>
+        <div id="visualization_steam"></div>
+
+        <script type="text/javascript">
+          var container = document.getElementById('visualization_steam');
+          var items = [
+              -nuke_data_steam-
+            ];
+
+            var dataset = new vis.DataSet(items);
+            var options = {
+//              width:'600px',
+//              height:'200px',
+//              start: '2017-02-01',
+//              end: '2017-04-01'
+            };
+
+
+          var Graph2d = new vis.Graph2d(container, dataset, options);
+          Graph2d.fit()
+        
+        </script>
+	<br>
+	<hr>
+        <div id="visualization_ps3"></div>
+
+        <script type="text/javascript">
+          var container = document.getElementById('visualization_ps3');
+          var items = [
+              -nuke_data_ps3-
+            ];
+
+            var dataset = new vis.DataSet(items);
+            var options = {
+//              width:'600px',
+//              height:'200px',
+//              start: '2017-02-01',
+//              end: '2017-04-01'
+            };
+
+
+          var Graph2d = new vis.Graph2d(container, dataset, options);
+          Graph2d.fit()
+        
+        </script>
+
+	<br>
+	<hr>
+        <div id="visualization_ps4"></div>
+
+        <script type="text/javascript">
+          var container = document.getElementById('visualization_ps4');
+          var items = [
+              -nuke_data_ps4-
+            ];
+
+            var dataset = new vis.DataSet(items);
+            var options = {
+//              width:'600px',
+//              height:'200px',
+//              start: '2017-02-01',
+//              end: '2017-04-01'
+            };
+
+
+          var Graph2d = new vis.Graph2d(container, dataset, options);
+          Graph2d.fit()
+        
+        </script>
+
+	<br>
+	<hr>
+
+	
+	<h1>FOB event info:</h1>
+	-fob_event_main-
+	<h1>Other events:</h1>
+	-fob_event_others-
+
+	<hr>
+	<hr>
+	<h1>Info list:</h1>
+	-infolist-
+
+  </body>
+</html>
