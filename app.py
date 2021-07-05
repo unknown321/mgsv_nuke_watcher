@@ -22,12 +22,12 @@ if args.delay:
     time.sleep(delay)
 
 def save_nukes_data(update_time, nuke_amount, platform):
-	f = open("{}.txt".format(platform), "a")
+	f = open(os.path.join(dir_path,"{}.txt".format(platform)), "a")
 	f.write('{},{}\n'.format(update_time, nuke_amount))
 	f.close()
 
 def get_nuke_data(platform):
-	f = open("{}.txt".format(platform), 'r').read().split('\n')
+	f = open(os.path.join(dir_path,"{}.txt".format(platform)), 'r').read().split('\n')
 	text = ""
 	for line in f:
 		if line == "":
