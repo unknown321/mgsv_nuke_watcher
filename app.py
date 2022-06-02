@@ -76,7 +76,7 @@ def get_info_list_data(data):
 	return result
 
 def gather_data():
-	nuke_amount = {'stm':-1, 'ps3':-1,'ps4':-1}
+	nuke_amount = {'stm':-1, 'ps3':0,'ps4':-1}
 
 	steam_client = Client()
 	steam_client.login()
@@ -86,10 +86,7 @@ def gather_data():
 
 	nuke_amount['stm'] = nukes['data']['info']['num']
 
-	ps3_client = Client(platform='ps3')
-#	ps3_client.login()
-	ps3_nukes = ps3_client.get_nuclear()[0]
-	nuke_amount['ps3'] = ps3_nukes['data']['info']['num']
+	nuke_amount['ps3'] = 0
 
 	ps4_client = Client(platform='ps4')
 	ps4_nukes = ps4_client.get_nuclear()[0]
